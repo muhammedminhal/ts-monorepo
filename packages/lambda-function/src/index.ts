@@ -4,6 +4,8 @@ export const handler = async (event: APIGatewayProxyEvent): Promise<APIGatewayPr
   const name = event.queryStringParameters?.name || "World";
   const invalidChars = /[^a-zA-Z0-9\s]/;
 
+
+
   // validation to check Characters are valid
   if (invalidChars.test(name)) {
     return {

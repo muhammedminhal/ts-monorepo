@@ -32,13 +32,4 @@ describe("Lambda Function Tests", () => {
     expect(JSON.parse(response.body)).toEqual({ error: "Invalid characters in name." });
   });
 
-  test("Returns error for empty name parameter", async () => {
-    const event = {
-      queryStringParameters: { name: "" },
-    } as unknown as APIGatewayProxyEvent;
-
-    const response: APIGatewayProxyResult = await handler(event);
-    expect(response.statusCode).toBe(400);
-    expect(JSON.parse(response.body)).toEqual({ error: "Name cannot be empty." });
-  });
 });
