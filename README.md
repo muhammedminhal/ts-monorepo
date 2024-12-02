@@ -48,7 +48,6 @@ This will prompt you for a stack name, region, and other deployment settings. On
 Here’s a sample README.md documentation that explains how to set up the repository, run tests, deploy the solution to AWS, and manage CI/CD with GitHub Actions:
 
 markdown
-Copy code
 # Typescript Monorepo with AWS Lambda, CI/CD, and SAM Deployment
 
 This repository contains a TypeScript-based Monorepo solution with a Lambda function, CI/CD using GitHub Actions, and deployment using AWS SAM (Serverless Application Model). The Lambda function accepts a query string parameter and returns a personalized greeting.
@@ -89,19 +88,13 @@ GitHub Account and AWS Account (for CI/CD and deployment)
 Setting Up the Project Locally
 Clone the repository:
 
-bash
-Copy code
 git clone https://github.com/yourusername/your-repository.git
 cd your-repository
 Install dependencies using Yarn:
 
-bash
-Copy code
 yarn install
 Install TypeScript globally if you haven't:
 
-bash
-Copy code
 npm install -g typescript
 Install the AWS SAM CLI if you haven't already:
 
@@ -110,22 +103,16 @@ Follow the instructions from the official AWS SAM CLI documentation to install t
 Running Unit Tests
 The repository uses Jest for unit testing. You can run the tests with the following command:
 
-bash
-Copy code
 yarn test
 Linting
 The repository is configured with ESLint for code quality. To run linting, use the following command:
 
-bash
-Copy code
 yarn lint
 AWS Lambda Deployment using SAM
 Configure AWS credentials:
 
 Ensure that your AWS credentials are set up on your local machine. You can configure your AWS CLI by running:
 
-bash
-Copy code
 aws configure
 This will prompt you to enter your AWS access key, secret key, region, and output format.
 
@@ -133,15 +120,11 @@ Build the SAM application:
 
 Run the following command to build your Lambda function and other resources:
 
-bash
-Copy code
 sam build
 Deploy the SAM application:
 
 Deploy the function to AWS with the following command:
 
-bash
-Copy code
 sam deploy --guided
 This will prompt you for a stack name, region, and other deployment settings. Once the deployment is complete, it will output the API Gateway URL.
 
