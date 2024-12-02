@@ -1,0 +1,21 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Resources:
+  HelloWorldFunction: # The name of the Lambda function resource being defined
+    Type: AWS::Serverless::Function # Specifies the type of resource, indicating that this is a Lambda function
+    Properties:
+      Handler: src/index.handler
+      Runtime: nodejs18.x
+      CodeUri: ../lambda-function #The location of the Lambda function code 
+      MemorySize: 128
+      Timeout: 5
+      Events: # Defines the events that trigger the Lambda function
+        HelloWorldApi:  # Name of the API event
+          Type: Api
+          Properties:
+            Path: /hello # The API Gateway path for invoking the Lambda function
+            Method: get
+Outputs:
+  ApiUrl: # Outputs section for exporting information about the deployed resources
+    Description: "API Gateway endpoint URL"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello" # The URL of the deployed API Gateway endpoint the `!Sub` function substitutes the Serverless API ID and AWS region to form the complete URL.

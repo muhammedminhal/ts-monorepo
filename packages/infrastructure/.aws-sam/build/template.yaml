@@ -6,7 +6,7 @@ Resources:
     Properties:
       Handler: src/index.handler
       Runtime: nodejs18.x
-      CodeUri: ../lambda-function
+      CodeUri: HelloWorldFunction
       MemorySize: 128
       Timeout: 5
       Events:
@@ -15,7 +15,10 @@ Resources:
           Properties:
             Path: /hello
             Method: get
+    Metadata:
+      SamResourceId: HelloWorldFunction
 Outputs:
   ApiUrl:
-    Description: "API Gateway endpoint URL"
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello"
+    Description: API Gateway endpoint URL
+    Value:
+      Fn::Sub: https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello
