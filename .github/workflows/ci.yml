@@ -20,5 +20,6 @@ jobs:
           yarn test
       - name: Deploy
         run: |
+          cd packages/infrastructure
           sam build
           sam deploy --no-confirm-changeset --no-fail-on-empty-changeset
