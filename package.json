@@ -1,8 +1,13 @@
-  {
-    "name": "ts-monorepo",
-    "version": "1.0.0",
-    "main": "index.js",
-    "license": "MIT",
-    "private": true,
-    "workspaces": ["packages/*"]
+{
+  "name": "ts-monorepo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "eslint": "^9.16.0"
   }
+}
