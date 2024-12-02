@@ -128,9 +128,6 @@ Deploy the function to AWS with the following command:
 sam deploy --guided
 This will prompt you for a stack name, region, and other deployment settings. Once the deployment is complete, it will output the API Gateway URL.
 
-Access the deployed Lambda function:
-
-You can now access the Lambda function via the provided API Gateway URL (e.g., https://your-api-id.execute-api.us-east-1.amazonaws.com/Prod/hello).
 
 GitHub Actions CI/CD Pipeline
 The repository is set up with a GitHub Actions CI/CD pipeline that automatically deploys your Lambda function to AWS when changes are pushed to the master branch.
